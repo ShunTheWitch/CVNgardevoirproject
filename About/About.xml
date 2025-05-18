@@ -13,9 +13,15 @@
 		<displayName>RimWorld - Biotech</displayName>
 		<steamWorkshopUrl>steam://https://store.steampowered.com/app/1826140/RimWorld__Biotech//</steamWorkshopUrl>
 	</li>
+	<li>
+		<packageId>RedMattis.BetterPrerequisites</packageId>
+		<displayName>big and small framework</displayName>
+		<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2925432336//</steamWorkshopUrl>
+	</li>
   </modDependencies>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Biotech</li><!-- Necessary. -->
+    <li>RedMattis.BetterPrerequisites</li>
   </loadAfter>
 </ModMetaData>
