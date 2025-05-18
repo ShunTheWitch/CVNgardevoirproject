@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- <FurDef> -->
+    <!-- <defName>Raltstfur</defName> -->
+    <!-- <noGraphic>true</noGraphic> -->
+    <!-- <bodyTypeGraphicPaths> -->
+      <!-- <Male>Ralts/Ralts_Body_Thin</Male> -->
+      <!-- <Female>Ralts/Ralts_Body_Thin</Female> -->
+      <!-- <Hulk>Ralts/Ralts_Body_Thin</Hulk> -->
+      <!-- <Thin>Ralts/Ralts_Body_Thin</Thin> -->
+      <!-- <Fat>Ralts/Ralts_Body_Thin</Fat> -->
+      <!-- <Child>Ralts/Ralts_Body_Thin</Child> -->
+      <!-- <Baby>Ralts/Ralts_Body_Thin</Baby> -->
+    <!-- </bodyTypeGraphicPaths> -->
+  <!-- </FurDef> -->
+
+  <!-- <HeadTypeDef Name="RaltsBase" Abstract="True"> -->
+    <!-- <randomChosen>True</randomChosen> -->
+    <!-- <requiredGenes> -->
+      <!-- <li>Raltsbody</li> -->
+    <!-- </requiredGenes> -->
+  <!-- </HeadTypeDef> -->
+
+  <!-- <HeadTypeDef ParentName="RaltsBase"> -->
+    <!-- <defName>Male_Ralts</defName> -->
+    <!-- <graphicPath>Ralts/Ralts_Average_Normal</graphicPath> -->
+    <!-- <gender>Male</gender> -->
+    <!-- <eyeOffsetEastWest>(0.15, 0, 0.17)</eyeOffsetEastWest> -->
+  <!-- </HeadTypeDef> -->
+
+  <!-- <HeadTypeDef ParentName="RaltsBase"> -->
+    <!-- <defName>Female_Ralts</defName> -->
+    <!-- <graphicPath>Ralts/Ralts_Average_Normal</graphicPath> -->
+    <!-- <gender>Female</gender> -->
+    <!-- <eyeOffsetEastWest>(0.15, 0, 0.17)</eyeOffsetEastWest> -->
+  <!-- </HeadTypeDef> -->
+
+  <GeneCategoryDef>
+    <defName>GARDEVOIRIN</defName>
+    <label>GARDEVOIRIN</label>
+    <displayPriorityInXenotype>100000</displayPriorityInXenotype>
+  </GeneCategoryDef>
+  
+  <GeneDef Name="GardeGenes" Abstract="True">
+    <displayCategory>GARDEVOIRIN</displayCategory>
+  </GeneDef>
+
+  <!-- <GeneDef ParentName="GardeGenes"> -->
+    <!-- <defName>Raltsbody</defName> -->
+    <!-- <label>Ralts stage</label> -->
+    <!-- <description>The first stage of a gardevoir hybrid's life, they are small, and weak, but hold great potential.</description> -->
+    <!-- <iconPath>Ralts/Ralts_Average_Normal_south</iconPath> -->
+    <!-- <displayOrderInCategory>1</displayOrderInCategory> -->
+    <!-- <biostatMet>3</biostatMet> -->
+    <!-- <biostatCpx>5</biostatCpx> -->
+    <!-- <fur>Raltstfur</fur> -->
+	<!-- <forcedHeadTypes> -->
+      <!-- <li>Male_Ralts</li> -->
+	  <!-- <li>Female_Ralts</li> -->
+    <!-- </forcedHeadTypes> -->
+	<!-- <exclusionTags> -->
+      <!-- <li>Fur</li> -->
+    <!-- </exclusionTags> -->
+	<!-- <statOffsets> -->
+      <!-- <PawnBeauty>1.5</PawnBeauty> -->
+    <!-- </statOffsets> -->
+    <!-- <skinIsHairColor>false</skinIsHairColor> -->
+    <!-- <renderNodeProperties Inherit="False"> -->
+      <!-- <li> -->
+        <!-- <parentTagDef>Body</parentTagDef> -->
+        <!-- <useSkinShader>true</useSkinShader> -->
+        <!-- <debugLabel>Fur</debugLabel> -->
+        <!-- <nodeClass>BigAndSmall.PawnRenderNode_FurSkinClr</nodeClass> -->
+        <!-- <workerClass>PawnRenderNodeWorker_Fur</workerClass> -->
+        <!-- <baseLayer>5</baseLayer> -->
+        <!-- <rotDrawMode>Fresh, Rotting</rotDrawMode> -->
+        <!-- <colorType>Skin</colorType> -->
+      <!-- </li> -->
+    <!-- </renderNodeProperties> -->
+  <!-- </GeneDef> -->
+
+
+  <GeneDef ParentName="GardeGenes">
+    <defName>Raltsbody</defName>
+    <label>Ralts stage</label>
+    <description>The first stage of a gardevoir hybrid's life, they are small, and weak, but hold great potential.</description>
+    <iconPath>Ralts/Ralts_Average_Normal_south</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <biostatMet>3</biostatMet>
+    <biostatCpx>5</biostatCpx>
+      <statOffsets>
+      <PawnBeauty>1.5</PawnBeauty>
+      <SM_RaidWealthOffset>-1000</SM_RaidWealthOffset>
+    </statOffsets>
+    <statFactors>
+      <SM_BodySizeMultiplier>0.50</SM_BodySizeMultiplier>
+    </statFactors>
+  <modExtensions>
+    <li Class="BigAndSmall.PawnExtension">
+      <bodyPaths>
+        <Female>Ralts/Ralts_Body_Thin</Female>
+        <Male>Ralts/Ralts_Body_Thin</Male>
+      </bodyPaths>
+      <headPaths>
+        <Body_Female>Ralts/Ralts_Average_Normal</Body_Female>
+        <Body_Male>Ralts/Ralts_Average_Normal</Body_Male>
+      </headPaths>
+
+      <bodyMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </bodyMaterial>
+      <headMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </headMaterial>
+	          <apparelRestrictions>
+          <absolutelyNothing>true</absolutelyNothing>
+          <thingDefs>
+            <allowlist>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_CrownStellic</li>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_Crown</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_Tailcap</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_VisageMask</li>
+            </allowlist>
+          </thingDefs>
+        </apparelRestrictions>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="GardeGenes">
+    <defName>Kirliabody</defName>
+    <label>Kirlia stage</label>
+    <description>The middle stage of a gardevoir hybrid's life, they are stronger and more capable than they used to be, but still have a long way to go.</description>
+    <iconPath>Kirlia/Kirlia_Average_Normal_south</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <biostatMet>3</biostatMet>
+    <biostatCpx>5</biostatCpx>
+      <statOffsets>
+      <PawnBeauty>1.5</PawnBeauty>
+    </statOffsets>
+  <modExtensions>
+    <li Class="BigAndSmall.PawnExtension">
+      <bodyPaths>
+        <Female>Kirlia/Kirlia_Thin</Female>
+        <Male>Kirlia/Kirlia_Thin</Male>
+      </bodyPaths>
+      <headPaths>
+        <Body_Female>Kirlia/Kirlia_Average_Normal</Body_Female>
+        <Body_Male>Kirlia/Kirlia_Average_Normal</Body_Male>
+      </headPaths>
+
+      <bodyMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </bodyMaterial>
+      <headMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </headMaterial>
+	          <apparelRestrictions>
+          <absolutelyNothing>true</absolutelyNothing>
+          <thingDefs>
+            <allowlist>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_CrownStellic</li>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_Crown</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_Tailcap</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_VisageMask</li>
+            </allowlist>
+          </thingDefs>
+        </apparelRestrictions>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="GardeGenes">
+    <defName>Gardevoirbody</defName>
+    <label>Gardevoir stage</label>
+    <description>The middle stage of a gardevoir hybrid's life, they are stronger and more capable than they used to be, but still have a long way to go.</description>
+    <iconPath>Gardevoir/Gardevoir_Average_Normal_south</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <biostatMet>3</biostatMet>
+    <biostatCpx>5</biostatCpx>
+      <statOffsets>
+      <PawnBeauty>1.5</PawnBeauty>
+    </statOffsets>
+  <modExtensions>
+    <li Class="BigAndSmall.PawnExtension">
+      <bodyPaths>
+        <Female>Gardevoir/Gardevoir_Female</Female>
+        <Male>Gardevoir/Gardevoir_Female</Male>
+      </bodyPaths>
+      <headPaths>
+        <Body_Female>Gardevoir/Gardevoir_Average_Normal</Body_Female>
+        <Body_Male>Gardevoir/Gardevoir_Average_Normal</Body_Male>
+      </headPaths>
+
+      <bodyMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </bodyMaterial>
+      <headMaterial>
+	  <shader>Cutout</shader>
+        <overrideDesiccated>true</overrideDesiccated>
+        <colorA> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorA>
+        <colorB> <color>(1.0, 1.0, 1.0, 1.0)</color> </colorB>
+      </headMaterial>
+	          <apparelRestrictions>
+          <absolutelyNothing>true</absolutelyNothing>
+          <thingDefs>
+            <allowlist>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_CrownStellic</li>
+              <li MayRequire="Ludeon.Rimworld.Royalty">Apparel_Crown</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_Tailcap</li>
+              <li MayRequire="Ludeon.Rimworld.Ideology">Apparel_VisageMask</li>
+            </allowlist>
+          </thingDefs>
+        </apparelRestrictions>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>
